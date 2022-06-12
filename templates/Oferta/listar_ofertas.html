@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Listar Ofertas</title>
+  </head>
+
+  <body>
+    <h2>Lista de Ofertas</h2>
+
+    {% for c in ofertas %}
+        <div>
+            <p> Nombre: {{ c.nombre }} </p>
+            <p> Proveedor: {{ c.nombre_proveedor }} </p>
+            <p> Fecha de registro: {{ c.fecha_registro }} </p>
+            <p> Datos contacto: {{ c.datos_contacto }} </p>
+        </div>
+        <br>
+    {% endfor %}
+
+  </body>
+</html>
+
+

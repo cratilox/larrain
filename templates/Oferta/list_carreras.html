@@ -1,0 +1,42 @@
+{% extends 'Registro/base.html' %} {% block titulo_principal %}
+
+<div id="titulo_pagina">Lista de Oferta Registradas</div>
+{% endblock %} {% block content %}
+
+<h3>Listado de Carreras</h3>
+
+
+{% if object_list %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Semestres</th>
+      <th>Mensualidad</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for oferta in object_list %}
+    <tr>
+      <th scope="row">{{ oferta.nombre }}</th>
+
+      <td>
+        <a class="btn btn-primary" href="{% url 'update_carrera' carrera.id %}"
+          >Editar</a
+        >
+      </td>
+      <td>
+        <a class="btn btn-danger" href="{% url 'del_carrera' carrera.id %}"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+<h1>No hay registros de carrera</h1>
+{% endif %} {% endblock %}
